@@ -1,0 +1,13 @@
+services:
+  mysqldb:
+    image: mysql:9.1
+    container_name: mysql-docker
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - mysqldb:/var/lib/mysql
+
+volumes:
+  mysqldb:

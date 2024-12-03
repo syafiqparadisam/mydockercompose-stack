@@ -1,0 +1,14 @@
+services:
+  postgresdb:
+    image: postgres:17.2
+    container_name: postgres-docker
+    environment:
+      POSTGRES_USER: postgres           # Username PostgreSQL
+      POSTGRES_PASSWORD: root   # Password untuk user
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgresdb:/var/lib/postgresql/data
+
+volumes:
+  postgresdb:

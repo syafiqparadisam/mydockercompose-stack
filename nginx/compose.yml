@@ -1,0 +1,14 @@
+services:
+  nginx:
+    image: nginx:1.27.3
+    container_name: nginx-server
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - "/etc/nginx:/etc/nginx"
+      - "/usr/lib/nginx:/usr/lib/nginx"
+      - "/usr/share/nginx/html:/usr/share/nginx/html"
+ #    - "/etc/nginx/nginx.conf:/etc/nginx/nginx.conf"
+   #   - "/etc/nginx/sites-enabled:/etc/nginx/sites-enabled"
+    # - "/etc/nginx/sites-available:/etc/nginx/sites-available"

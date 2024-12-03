@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7.4.1
+    container_name: redis_container
+    ports:
+      - "127.0.0.1:6379:6379" # Peta port Redis ke host
+    volumes:
+      - redis_data:/data # Persistensi data Redis
+#   command: ["redis-server", "--appendonly", "yes"] # Aktifkan mode AOF untuk persistensi data
+
+volumes:
+  redis_data:
+
