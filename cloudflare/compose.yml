@@ -1,0 +1,11 @@
+
+services:
+  cloudflared:
+    image: cloudflare/cloudflared:1643-c59d56c65502
+    container_name: cloudflared
+    network_mode: host # Membagikan jaringan host (gunakan hanya jika diperlukan)
+    volumes:
+      - ./.cloudflared:/etc/cloudflared # Path lokal ke konfigurasi cloudflared
+      - ./.cloudflared/cert.pem:/root/.cloudflared/cert.pem
+    command: tunnel login
+    restart: unless-stopped # Agar otomatis restart jika container berhenti
