@@ -1,0 +1,22 @@
+services:
+  web:
+    image: fikkzdeveloper/portofolio:2.3.0
+ #   container_name: web
+  #  ports: 
+   #   - "8001:80"
+    environment:
+      - MY_APP_SERVICE_ID=tes
+      - MY_APP_PUBLIC_KEY=tes
+      - MY_APP_TEMPLATE_ID=tes
+    networks:
+      - porto-network
+    deploy:
+      replicas: 2
+#      resources:
+ #       limits:
+  #        memory: 6M
+
+
+#networks:
+#  porto-network:
+#    driver: bridge
